@@ -1,6 +1,14 @@
+We have selected Problem Statement 1 in Odoo hackathon 2025 and choosen the swap skills of users 
+Team Leader : Rhythm Mehta - rhythmmehta29@gmail.com
+Team Member 1 : Kathan Prajapati -prajapatikathan1477@gmail.com
+
+Video Explanation : https://drive.google.com/file/d/1tg9Hz7s5WaG3Z22ys2syIz8bI0wwB_Lt/view?usp=drive_link
+
 # Skill Swap Platform
 
 A modern web application built with React, TypeScript, and Firebase that enables users to exchange skills and knowledge. Users can create profiles, list their skills, and request skill swaps with other users.
+
+
 
 ## Features
 
@@ -60,18 +68,6 @@ npm start
 
 The application will be available at `http://localhost:3000`.
 
-## Project Structure
-
-```
-src/
-├── components/        # Reusable UI components
-├── contexts/         # React context providers
-├── lib/             # Firebase and other configurations
-├── pages/           # Page components
-├── scripts/         # Database seeding and utilities
-├── types/           # TypeScript type definitions
-└── utils/           # Helper functions
-```
 
 ## Available Scripts
 
