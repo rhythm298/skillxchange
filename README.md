@@ -7,5 +7,5 @@ Overview:
 Develop a Skill Swap Platform — a mini application that enables users to list their skills and
 request others in return
 
-Rhythm Mehta-rhythmmehta29@gmail.com
-Kathan Prajapati-prajapati1477@gmail.com
+Rhythm Mehta - rhythmmehta29@gmail.com
+Kathan Prajapati - prajapati1477@gmail.com
