@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark theme skill exchange platform colors */
+    --background: 220 25% 6%;
+    --foreground: 220 10% 95%;
+
+    --card: 220 20% 8%;
+    --card-foreground: 220 10% 95%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 220 10% 95%;
+
+    --primary: 246 83% 65%;
+    --primary-foreground: 220 25% 6%;
+
+    --secondary: 190 75% 55%;
+    --secondary-foreground: 220 25% 6%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 280 75% 65%;
+    --accent-foreground: 220 25% 6%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 220 10% 95%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 246 83% 65%;
+
+    --radius: 0.75rem;
+
+    /* Glassmorphism colors */
+    --glass: 220 20% 8% / 0.8;
+    --glass-border: 220 30% 25% / 0.3;
+    --glass-highlight: 220 50% 95% / 0.1;
+
+    /* Gradient colors */
+    --gradient-primary: linear-gradient(135deg, hsl(246 83% 65%), hsl(280 75% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(190 75% 55%), hsl(246 83% 65%));
+    --gradient-background: linear-gradient(135deg, hsl(220 25% 6%), hsl(220 20% 8%));
+    --gradient-card: linear-gradient(135deg, hsl(220 20% 8% / 0.7), hsl(220 15% 12% / 0.9));
+
+    /* Animation and effects */
+    --shadow-glow: 0 0 40px hsl(246 83% 65% / 0.3);
+    --shadow-card: 0 8px 32px hsl(220 25% 3% / 0.6);
+    --shadow-floating: 0 16px 64px hsl(220 25% 3% / 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Skill tag colors */
+    --skill-programming: 210 100% 60%;
+    --skill-design: 280 80% 65%;
+    --skill-music: 340 75% 60%;
+    --skill-cooking: 25 85% 60%;
+    --skill-fitness: 120 60% 55%;
+    --skill-language: 190 75% 55%;
+    --skill-business: 246 83% 65%;
+    --skill-crafts: 45 80% 60%;
+
+    --sidebar-background: 220 25% 6%;
+    --sidebar-foreground: 220 10% 95%;
+    --sidebar-primary: 246 83% 65%;
+    --sidebar-primary-foreground: 220 25% 6%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 220 10% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 246 83% 65%;
+  }
+
+  .dark {
+    /* Dark theme is the default */
+    --background: 220 25% 6%;
+    --foreground: 220 10% 95%;
+    --card: 220 20% 8%;
+    --card-foreground: 220 10% 95%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 220 10% 95%;
+    --primary: 246 83% 65%;
+    --primary-foreground: 220 25% 6%;
+    --secondary: 190 75% 55%;
+    --secondary-foreground: 220 25% 6%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 65%;
+    --accent: 280 75% 65%;
+    --accent-foreground: 220 25% 6%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 220 10% 95%;
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 246 83% 65%;
+    --sidebar-background: 220 25% 6%;
+    --sidebar-foreground: 220 10% 95%;
+    --sidebar-primary: 246 83% 65%;
+    --sidebar-primary-foreground: 220 25% 6%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 220 10% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 246 83% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background: var(--gradient-background);
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card component */
+  .glass-card {
+    @apply backdrop-blur-lg bg-card/80 border border-white/10 rounded-xl shadow-lg;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .glass-card:hover {
+    @apply border-white/20;
+    box-shadow: var(--shadow-floating);
+    transform: translateY(-4px);
+  }
+
+  /* Floating action button */
+  .floating-btn {
+    @apply fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg z-50;
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition-bounce);
+  }
+
+  .floating-btn:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow), var(--shadow-floating);
+  }
+
+  /* Skill tag variants */
+  .skill-tag {
+    @apply px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm border;
+    transition: var(--transition-smooth);
+  }
+
+  .skill-tag:hover {
+    transform: translateY(-1px);
+  }
+
+  .skill-programming {
+    background: hsl(var(--skill-programming) / 0.2);
+    color: hsl(var(--skill-programming));
+    border-color: hsl(var(--skill-programming) / 0.3);
+  }
+
+  .skill-design {
+    background: hsl(var(--skill-design) / 0.2);
+    color: hsl(var(--skill-design));
+    border-color: hsl(var(--skill-design) / 0.3);
+  }
+
+  .skill-music {
+    background: hsl(var(--skill-music) / 0.2);
+    color: hsl(var(--skill-music));
+    border-color: hsl(var(--skill-music) / 0.3);
+  }
+
+  .skill-cooking {
+    background: hsl(var(--skill-cooking) / 0.2);
+    color: hsl(var(--skill-cooking));
+    border-color: hsl(var(--skill-cooking) / 0.3);
+  }
+
+  .skill-fitness {
+    background: hsl(var(--skill-fitness) / 0.2);
+    color: hsl(var(--skill-fitness));
+    border-color: hsl(var(--skill-fitness) / 0.3);
+  }
+
+  .skill-language {
+    background: hsl(var(--skill-language) / 0.2);
+    color: hsl(var(--skill-language));
+    border-color: hsl(var(--skill-language) / 0.3);
+  }
+
+  .skill-business {
+    background: hsl(var(--skill-business) / 0.2);
+    color: hsl(var(--skill-business));
+    border-color: hsl(var(--skill-business) / 0.3);
+  }
+
+  .skill-crafts {
+    background: hsl(var(--skill-crafts) / 0.2);
+    color: hsl(var(--skill-crafts));
+    border-color: hsl(var(--skill-crafts) / 0.3);
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Animated gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Navigation animations */
+  .nav-link {
+    @apply relative overflow-hidden;
+    transition: var(--transition-smooth);
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 transform scale-x-0 origin-left;
+    background: var(--gradient-primary);
+    transition: var(--transition-smooth);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    transform: scale-x-100;
+  }
+}
